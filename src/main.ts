@@ -15,8 +15,10 @@ async function bootstrap() {
   const document = SwaggerModule.createDocument(app, config);
 
   SwaggerModule.setup('/', app, document);
+
+  app.enableCors();
   app.useGlobalInterceptors(new ApiResponseInterceptor());
 
-  await app.listen(3000);
+  await app.listen(4000);
 }
 bootstrap();
